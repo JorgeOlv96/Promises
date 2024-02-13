@@ -1,9 +1,10 @@
-//Manejo de error
-fetch('https://fakestoreapi.com/products/1')
-    .then(res => {
-        res.json().then(console.log)
+//Leer archivos html
+fetch('not-found.html')
+    .then(resp => resp.text())
+    .then(html => {
+        document.querySelector('.body').innerHTML = html;
     })
     .catch(err => {
-        console.error('Error en la petición');
+        console.error('Error en la peticion')
         console.error(err);
-    })
+    });
